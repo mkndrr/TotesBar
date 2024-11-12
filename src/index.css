@@ -6,7 +6,7 @@
 }
 
 body {
-    background: whitesmoke;
+    background: #f0f0f0;
     color: #222;
     font-family: "Tinos", serif;
     font-weight: 400;
@@ -16,6 +16,10 @@ body {
 .wrapper {
     width: 1280px;
     margin: 50px auto;
+}
+
+header {
+    position: relative;
 }
 
 header .logo{
@@ -37,6 +41,31 @@ header ul.nav li {
 
 header ul.nav li:hover {
     opacity: 0.5;
+}
+
+header .shop-cart-button {
+    float: right;
+    cursor: pointer;
+    transition: color, transform 500ms ease;
+}
+
+header .shop-cart-button:hover,
+header .shop-cart-button.active {
+    color:  rgb(109, 59, 97);
+    transform: scale(1.5);
+}
+
+header .cart-shop {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    width: 450px;
+    min-height: 100px;
+    background: #f0f0f0;
+    -webkit-box-shadow: 0px 0px 20px 5px rgba(109,59,97, 0.2);
+    -moz-box-shadow: 0px 0px 20px 5px rgba(109,59,97, 0.2);
+    box-shadow: 0px 0px 20px 5px rgba(109,59,97, 0.2);
+    border-radius: 20px;
 }
 
 header .presentation{
@@ -64,6 +93,59 @@ header .presentation::after{
     right: 50px;
     top: 300px;
     font-style: italic;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+main .item {
+    width: 30%;
+    margin-bottom: 50px;
+    background: #f5f5f5;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    padding-bottom: 20px;
+    
+}
+
+main .item img {
+    width: 100%;
+    border-radius: 20px;
+    transition: transform 500ms ease;
+}
+
+main .item img:hover {
+    transform: scale(1.05);
+}
+
+main h2, main p, main b {
+    margin: 20px 20px;
+    color: #333;
+}
+
+main .add-to-cart {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background: rgb(109, 59, 97);
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 500ms ease;
+}
+
+main .add-to-cart:hover {
+    transform: scale(1.3);
 }
 
 footer {
