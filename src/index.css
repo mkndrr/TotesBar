@@ -60,12 +60,44 @@ header .cart-shop {
     top: 30px;
     right: 0px;
     width: 450px;
-    min-height: 100px;
+    padding: 20px;
+    padding-bottom: 0;
     background: #f0f0f0;
     -webkit-box-shadow: 0px 0px 20px 5px rgba(109,59,97, 0.2);
     -moz-box-shadow: 0px 0px 20px 5px rgba(109,59,97, 0.2);
     box-shadow: 0px 0px 20px 5px rgba(109,59,97, 0.2);
     border-radius: 20px;
+}
+
+header .cart-shop .empty h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+header .cart-shop .item {
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+    
+}
+
+header .cart-shop .item img {
+    width: 70px;
+    float: left;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+header .cart-shop .item h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+   
+}
+
+header .cart-shop .item p {
+    font-weight: 600;
+
 }
 
 header .presentation{
