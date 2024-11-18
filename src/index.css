@@ -67,6 +67,7 @@ header .cart-shop {
     -moz-box-shadow: 0px 0px 20px 5px rgba(109,59,97, 0.2);
     box-shadow: 0px 0px 20px 5px rgba(109,59,97, 0.2);
     border-radius: 20px;
+    z-index: 100;
 }
 
 header .cart-shop .empty h2 {
@@ -100,6 +101,28 @@ header .cart-shop .item p {
 
 }
 
+header .cart-shop .item .delete-icon {
+    color: rgba(109,59,97);
+    float: right;
+    position: relative;
+    top: -25px;
+    cursor: pointer;
+    transition: color, transform 500ms ease;
+}
+
+header .cart-shop .item .delete-icon:hover {
+    color: rgb(94, 51, 84);
+    transform: scale(1.2);
+}
+
+header .cart-shop .summa {
+    float: left;
+    width: 100%;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
 header .presentation{
     margin: 50px 0;
     background: url('./img/340.970.jpg') no-repeat;
@@ -127,6 +150,44 @@ header .presentation::after{
     font-style: italic;
 }
 
+.categories div {
+    display: inline-block;
+    background: #f5f5f5;
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin-bottom: 25px;
+    margin-right: 20px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 500ms ease;
+}
+
+.categories div:hover {
+    border-color: silver;
+    transform: scale(1.1);
+}
+
+.full-item {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    overflow: auto;
+
+}
+
+.full-item > div {
+    width: 600px;
+    position: relative;
+    margin: 10% auto;
+    padding: 40px 30px;
+    background: #fff;
+    border-radius: 20px;
+}
+
 main {
     display: flex;
     width: 100%;
@@ -145,22 +206,27 @@ main .item {
     
 }
 
-main .item img {
+main .item img,
+.full-item img {
     width: 100%;
     border-radius: 20px;
     transition: transform 500ms ease;
+    cursor: pointer;
 }
 
-main .item img:hover {
+main .item img:hover,
+.full-item img:hover {
     transform: scale(1.05);
 }
 
-main h2, main p, main b {
+main h2, main p, main b,
+.full-item h2, .full-item p, .full-item b {
     margin: 20px 20px;
     color: #333;
 }
 
-main .add-to-cart {
+main .add-to-cart,
+.full-item .add-to-cart {
     position: absolute;
     right: 20px;
     bottom: 20px;
@@ -176,7 +242,8 @@ main .add-to-cart {
     transition: transform 500ms ease;
 }
 
-main .add-to-cart:hover {
+main .add-to-cart:hover,
+.full-item .add-to-cart:hover {
     transform: scale(1.3);
 }
 

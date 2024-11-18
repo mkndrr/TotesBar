@@ -3,12 +3,15 @@ import './App.css';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
 import Items from './Components/Items';
+import Categories from './Components/Categories';
+import ShowFullItem from './Components/ShowFullItem';
 
 class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
       orders: [],
+      currentItems: [], 
       items: [
         {
           id: 1,
@@ -82,18 +85,45 @@ class App extends React.Component {
           category: 'shoulder',
           price: '5490'
         }
-      ]
+      ],
+      showFullItem: false,
+      fullItem: {}
     }
-    this.addTo0rder = this.addTo0rder.bind(this)
+    this.state.currentItems = this.state.items
+    this.addTo0rder = this.addTo0rder.bind(this) //делаем чтобы методы могли работать с состояниями и this
+    this.delete0rder = this.delete0rder.bind(this)
+    this.chooseCategory = this.chooseCategory.bind(this)
+    this.onShowItem = this.onShowItem.bind(this)
   }
   render(){
     return (
       <div className='wrapper'>
-        <Header orders={this.state.orders} />
-        <Items items={this.state.items} onAdd={this.addTo0rder}/>
+        <Header orders={this.state.orders} onDelete={this.delete0rder} />
+        <Categories chooseCategory={this.chooseCategory}/>
+        <Items onShowItem={this.onShowItem} items={this.state.currentItems} onAdd={this.addTo0rder}/>
+        {this.state.showFullItem && <ShowFullItem onAdd={this.addTo0rder} onShowItem={this.onShowItem} item={this.state.fullItem}/>}
         <Footer />
       </div>
     );
+  }
+
+  onShowItem(item) {
+    this.setState({fullItem: item})
+    this.setState({showFullItem: !this.state.showFullItem})
+  }
+
+  chooseCategory(category) {
+    if(category === 'all') {
+      this.setState({currentItems: this.state.items})
+      return
+    }
+    this.setState({
+      currentItems: this.state.items.filter(el => el.category === category)
+    })
+  }
+
+  delete0rder(id) {
+    this.setState({orders: this.state.orders.filter(el => el.id !== id)})
   }
 
   addTo0rder(item) {
