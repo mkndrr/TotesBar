@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/TotesBar/static/css/main.0a3e7f65.css",
+    "main.js": "/TotesBar/static/js/main.c370188d.js",
+    "static/media/340.970.jpg": "/TotesBar/static/media/340.970.3ff2077d26ecec916f38.jpg",
+    "index.html": "/TotesBar/index.html",
+    "main.0a3e7f65.css.map": "/TotesBar/static/css/main.0a3e7f65.css.map",
+    "main.c370188d.js.map": "/TotesBar/static/js/main.c370188d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0a3e7f65.css",
+    "static/js/main.c370188d.js"
+  ]
+}
