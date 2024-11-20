@@ -246,7 +246,30 @@ footer {
     margin-top: 100px;
 }
 
-/* Медиа-запросы для мобильных устройств */
+/* Медиа-запросы для адаптации к различным устройствам */
+@media (max-width: 1200px) {
+    header .nav {
+        float: none;
+        text-align: center;
+    }
+
+    header ul.nav li {
+        display: inline-block;
+        margin: 10px 5px; /* Уменьшение отступов */
+    }
+
+    header .presentation::after {
+        font-size: 32px; /* Уменьшение размера шрифта */
+        right: 20px;
+        top: 250px; /* Корректировка позиции */
+        width: auto; /* Автоматическая ширина */
+    }
+
+    main .item {
+        width: 45%; /* Увеличение ширины для средних экранов */
+    }
+}
+
 @media (max-width: 768px) {
     header .nav {
         float: none;
@@ -254,7 +277,7 @@ footer {
     }
 
     header ul.nav li {
-        display: block;
+        display: block; /* Вертикальное выравнивание */
         margin: 10px 0;
     }
 
@@ -286,5 +309,27 @@ footer {
 
     footer {
         margin-top: 50px; /* Уменьшение отступа */
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo {
+        font-size: 18px; /* Уменьшение размера логотипа */
+    }
+
+    header .cart-shop {
+        width: 100%; /* Полная ширина для мобильных */
+        right: 0; /* Убрать отступ */
+    }
+
+    header .presentation::after {
+        font-size: 20px; /* Уменьшение размера шрифта */
+        width: 80%; /* Ширина текста */
+        right: 10px; /* Уменьшение отступа */
+        top: 150px; /* Корректировка позиции */
+    }
+
+    main .item {
+        margin-bottom: 20px; /* Уменьшение отступа */
     }
 }
